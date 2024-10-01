@@ -1,4 +1,20 @@
-Docker:
+## Docker run 
+```
+docker run -it -v /downloads/dir:/downloads blurred123131/tidal-dl-metafix:latest 
+```
+## Docker Compose
+```
+Services:
+    tidal-dl:
+    image: blurred123131/tidal-dl-metafix:latest
+    container_name: tidal_dl
+    volumes:
+      - /downloads/dir:/downloads
+      - ./tidal-config.json:/root/.tidal-dl.json
+    command: tail -f /dev/null
+```
+
+## Dockerfile
 ```
 FROM python:3.11-slim
 COPY Tidal-DL_Plex-Friendly TIDALDL-PY
@@ -16,7 +32,7 @@ pip3 install --no-cache-dir -e . &&  apt-get remove -y gcc python3-dev libssl-d>
 CMD tidal-dl
 ```
 
-Non-docker (haven't tested)
+## Non-docker (haven't tested)
 ```
 pip3 install --no-cache-dir -r requirements.txt --user
 pip3 install --no-cache-dir -e AIGPY/ --user
