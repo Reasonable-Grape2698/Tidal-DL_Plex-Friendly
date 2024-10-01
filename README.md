@@ -1,8 +1,7 @@
 Docker:
 ```
 FROM python:3.11-slim
-COPY TIDALDL-PY TIDALDL-PY
-COPY tidal.conf /root/.tidal-dl.json
+COPY Tidal-DL_Plex-Friendly Tidal-DL_Plex-Friendly
 WORKDIR TIDALDL-PY
 ENV PYTHONPATH=/TIDALDL-PY/tidal_dl/
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
