@@ -52,6 +52,8 @@ def __tryStr__(obj):
 def __tryList__(obj):
     if obj is None or len(obj) <= 0:
         return ''
+    if isinstance(obj, str):
+        return obj
     return ", ".join(obj)
 
 
@@ -153,8 +155,8 @@ class TagTool(object):
             self._handle.add_tags()
         self._handle.tags['title'] = self.title
         self._handle.tags['album'] = self.album
-        self._handle.tags['albumartist'] = __tryStr__(self.albumartist)
-        self._handle.tags['artist'] = __tryStr__(self.artist)
+        self._handle.tags['albumartist'] = __tryList__(self.albumartist)
+        self._handle.tags['artist'] = __tryList__(self.artist)
         self._handle.tags['copyright'] = __tryStr__(self.copyright)
         self._handle.tags['tracknumber'] = str(self.tracknumber)
         self._handle.tags['tracktotal'] = str(self.totaltrack)
