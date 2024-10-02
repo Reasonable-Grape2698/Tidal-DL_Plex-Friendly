@@ -37,6 +37,6 @@ CMD tidal-dl
 pip3 install --no-cache-dir -r requirements.txt --user
 pip3 install --no-cache-dir -e AIGPY/ --user
 pip3 install --no-cache-dir -e . --user
-
-Note I've created a pull request for the aigby glitch, it's a single line of code changed to avoid it turning strings into e, x, a, m, p, l, e.
 ```
+Note I've created a pull request for the aigby glitch, it's a single line of code changed to avoid it turning strings into e, x, a, m, p, l, e.
+
